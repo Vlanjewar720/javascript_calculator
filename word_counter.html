@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word_count</title>
+    <style>
+        .row{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(231, 133, 34);
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+        
+            
+        }
+       .hed {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+        }
+        #itext{
+            width: 600px;
+            height: 70px;
+            font-size: 25px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: -5px -5px 15px rgb(214, 214, 50) , 5px 5px 15px rgb(100, 128, 0);
+            /* background: transparent; */
+            background-color: rgb(21, 29, 12);
+            /* background-color: rgb(187, 116, 169); */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(251, 251, 255);
+            
+            
+        }
+        .subm{
+            margin: 20px;
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: -3px -3px 9px rgb(49, 48, 48) , 5px 5px 15px red;
+            border: none;
+            margin-top: 30px;
+            background: transparent;
+        }
+        span{
+            font-size: 25px;
+            /* font-family: cursive; */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 7px 10px;
+            margin: 10px auto;
+            color: rgb(44, 38, 38);
+        }
+        #nword{
+            color: red;
+        }
+        #novol{
+            color: white;
+        }
+        #noconst{
+            color: green;
+        }
+
+    </style>
+    <script>
+       
+            function uppr()
+            {
+                let str=document.getElementById('itext').value;
+                let upr = str.toUpperCase();
+                document.getElementById('itext').value=upr;   
+            }
+            function lower()
+            {
+                let str=document.getElementById('itext').value;
+                let lowr = str.toLowerCase();
+                document.getElementById('itext').value=lowr;   
+            }
+            function countword(self)
+            {
+                var spaces = self.value.match(/\S+/g);
+                var words = spaces ? spaces.length : 0;
+                document.getElementById("nword").innerHTML=words;
+
+             //vowels & consonent
+          
+            let str=document.getElementById('itext').value;
+            let vowel = "aeiouAEIOU";
+            let consonant="bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+            let countv=0;
+            let counts=0;
+         
+          for(var x=0;x<str.length;x++)
+          {
+               for(var y=0; y<vowel.length; y++)
+               {
+                  if(str[x]==vowel[y])
+                  {
+                      countv++;
+                  }
+                }
+                for(var z=0; z < consonant.length; z++)
+                {
+                  if(str[x]==consonant[z])
+                  {
+                      counts++;
+                    }
+                }
+            }
+            document.getElementById('novol').innerHTML=countv;
+            document.getElementById('noconst').innerHTML=counts;
+            document.getElementById('nword').innerHTML=countw;
+        
+            // document.getElementById('letter').innerHTML=str;
+
+            }
+            function reset()
+            {
+            document.getElementById('itext').value='';
+
+            document.getElementById('novol').innerHTML='';
+            document.getElementById('noconst').innerHTML='';
+            document.getElementById('nword').innerHTML='';
+
+            }
+    </script>
+</head>
+<body>
+    <center>
+    <div class="row">
+    <div class="head">
+        <h1 class="hed">Word Counter Calculator</h1>
+    </div>
+    <div class="display">
+        <input type="text" name="text" id="itext" onkeyup="countword(this)">
+
+    </div>
+    <!-- <div><input type="button" value="Submit" name="button" id="subm" onclick="wcc()"></div> -->
+    <input type="button" name="button" class="subm" value="Upper Case" onclick="uppr()">
+    <input type="button" name="button" class="subm" value="Lower Case" onclick="lower()">
+    <input type="button" name="button" class="subm" value="Reset" onclick="reset()">
+    <hr><hr>
+
+    <table>
+        <tr> <td><span> words</span></td>  <td><span>=></span> <span id="nword"></span></td></tr>
+        <tr> <td><span> vowels</span></td>  <td><span>=></span><span id="novol"></span></td></tr>
+        <tr> <td><span> Consonants</span></td>  <td><span>=></span> <span id="noconst"></span></td></tr>
+        <!-- <tr> <td><span>Number of letters:</span></td>  <td><span>=></span> <span id="letter"></span></td></tr> -->
+    </table>
+</div></center>
+</body>
+</html>

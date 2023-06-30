@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculators</title>
+    <script src="./js_calculator.js"></script>
+    <style>
+        .container{
+            background-color: rgb(45, 133, 111);
+            height: 1000px;
+        }
+        .calculators{
+
+            position: relative;
+            left: 500px;
+            top: 200px;
+            width: 200px;
+            background-color: rgb(19, 13, 13);
+            padding: 15px;
+            justify-items: center;
+            border-radius: 30px;
+        }
+        button{
+            width: 40px;
+            height: 30px;
+            box-shadow: 0px 0px 1px 1px grey;
+            margin: 3px;
+            font-size: 18px;
+        }
+        #plus{
+            height: 70px;
+        }
+     
+        .text{
+            font-size: 25px;
+            text-align: center;
+            height: 50px;
+            width: 167px;
+            padding: 5px;
+        }
+        #texta{
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculators">
+            <div class="text"><textarea name="texta" id="texta" cols="15" rows="2"></textarea></div>
+            <div class="buttons">
+                <form action="">
+                <table>
+                    <tr>
+                        <td><button id="c" class="button ">C</button></td>
+                        <td><button id="mod" class="button ">%</button></td>
+                        <td><button id="div" class="button ">/</button></td>
+                        <td><button id="cn" class="button ">Cn</button></td>
+                    
+                    </tr>
+                    <tr>
+                        <td><button id="sev" class="button ">7</button></td>
+                        <td><button id="eig" class="button ">8</button></td>
+                        <td><button id="nine" class="button ">9</button></td>
+                        <td><button id="sub" class="button ">-</button></td>
+                    
+                    </tr>
+                    <tr>
+                        <td><button id="four" class="button ">4</button></td>
+                        <td><button id="five" class="button ">5</button></td>
+                        <td><button id="six" class="button ">6</button></td>
+                        <td><button id="mul" class="button ">*</button></td>
+                    
+                    </tr>
+                    <tr>
+                        <td><button id="one" class="button ">1</button></td>
+                        <td><button id="two" class="button ">2</button></td>
+                        <td><button id="three" class="button ">3</button></td>
+                        <td rowspan="2"><button id="plus" class="button ">+</button></td>
+                    
+                    </tr>
+                    <tr>
+                        <td  align="center" ><button id="zero" class="button ">0</button></td>
+                        <td ><button id="equal" class="button ">=</button></td>
+                        <td><button id="" class="button ">.</button></td>
+                        <!-- <td><button id="" class=""></button></td> -->
+                    
+                    </tr>
+                </table>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
